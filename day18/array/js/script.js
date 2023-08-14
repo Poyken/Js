@@ -89,7 +89,7 @@ console.log(users.slice(4));
 console.log(users.slice(-1));
 // gop tat cac cac phan tu thanh 1 chuoi =join
 console.log(users.join(""));
-
+//================================================================
 //cac phuong thuc thay doi mang ban dau
 // //them phan tu vao cuoi mang va tra ve so luong sau khi them
 // var count = users.push("duc", "nhat", "truong");
@@ -132,9 +132,9 @@ console.log(users);
 //ko tra ve gia tri
 //khong dung duoc
 
-// users.forEach(function (user, email) {
-//   console.log(user, email);
-// });
+users.forEach(function (user) {
+  console.log(user);
+});
 //map()--duyet cac phan tu va tra ve 1 mang
 var result = users.map(function (user, index) {
   console.log(user, index);
@@ -169,7 +169,26 @@ document.write(result.join(""));
 //find--tra ve 1 phan tu cua mang
 //thoa man dieu kien phan tu dau tien return true
 
-var result = users.findLast(function (user) {
-  if (user == "d" || user == "h") return true;
-});
-console.log(result);
+// var result = users.find(function (user) {
+//   if (user == "d" || user == "h") return true;
+// });
+// console.log(result);
+
+//findLast tra ve 1 phan tu cua mang
+//tra ve phan tu cuoi return true
+// var result = users.findLast(function (user) {
+//   if (user == "d" || user == "h") return true;
+// });
+// console.log(result);
+
+//findIndex--tim vi tri index dau tien thoa man dieu kien return true
+// var result = users.findIndex(function (user) {
+//   if (user == "d" || user == "h") return true;
+// });
+// console.log(result);
+
+//findlastindex --tim vi tri index cuoi cung thoa man dieu kien
+// var result = users.findLastIndex(function (user) {
+//   if (user == "d" || user == "h") return true;
+// });
+// console.log(result);
