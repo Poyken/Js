@@ -37,7 +37,9 @@ function Person(name, age, address) {
 //     var firstname = custom.name.slice(0, custom.name.indexOf(" "));
 //     var lastname = custom.name.slice(custom.name.lastIndexOf(" "));
 //     var user = new Person(custom.name, custom.age, custom.address);
+//su khac nhau giua bachtick va khong bachtick o new person nay la gi
 //     user.shortName = `${firstname} ${lastname}`;
+//  tai sao de duoc  first name va last name vao backtick ma khong de duoc customer.name...
 //     return user;
 //   });
 //   newArr.sort(function (a, b) {
@@ -70,16 +72,33 @@ function Person(name, age, address) {
 //   });
 //   return newArr;
 // }
+// function createCustomers(customers) {
+//   const sortedArray = customers.slice().sort((a, b) => a.age - b.age);
+
+//   const result = sortedArray.map((customer) => {
+//     const arrayName = customer.name.split(" ");
+//     const shortName = `${arrayName[0]} ${arrayName[arrayName.length - 1]}`;
+//     return { ...customer, shortName };
+//   });
+
+//   return result;
+// }
 function createCustomers(customers) {
-  const sortedArray = customers.slice().sort((a, b) => a.age - b.age);
+  if (Array.isArray(customers)) {
+    const arrayCustomers = customers
+      .sort((a, b) => a.age - b.age)
+      .map((customer) => {
+        customer["shortName"] =
+          customer["name"].split(" ")[0] +
+          " " +
+          customer["name"].split(" ")[customer["name"].split(" ").length - 1];
+        return customer;
+      });
 
-  const result = sortedArray.map((customer) => {
-    const arrayName = customer.name.split(" ");
-    const shortName = `${arrayName[0]} ${arrayName[arrayName.length - 1]}`;
-    return { ...customer, shortName };
-  });
-
-  return result;
+    return arrayCustomers;
+  } else {
+    return "không phải mảng";
+  }
 }
 const result = createCustomers(customers);
 

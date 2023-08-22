@@ -56,42 +56,87 @@ dataLogin = {
   role: "user",
 };
 */
-function User(name, password, email) {
+const data = [];
+
+const User = function (name, password, email) {
   this.name = name;
   this.password = password;
   this.email = email;
-}
+};
 
-function handleRegister() {
-  const data = [];
+var dataRegister = handleRegister(
+  "Nguyen Van A",
+  "123456",
+  "nguyenvana@email.com"
+);
 
-  function pushUser(name, password, email) {
-    if (!name && !password && !email) return data;
-    if (!name || !password || !email) return "Bạn chưa nhập đủ các trường";
-    var newUser = new User(name, password, email);
-    newUser.role = "user";
-    if (data.length === 0) {
-      data.push(newUser);
-    } else {
-      for (var i = 0; i < data.length; i++) {
-        if (data[i].email === email) return "Địa chỉ email đã được sử dụng";
-      }
-      data.push(newUser);
-    }
-    return data;
+var dataRegister = handleRegister(
+  "Nguyen Van B",
+  "123456",
+  "nguyenvanb@email.com"
+);
+var dataRegister = handleRegister(
+  "Nguyen Van C",
+  "1234567",
+  "nguyenvanc@email.com"
+);
+
+// // hàm register
+// function handleRegister(name, password, email) {
+//   if (!name || !password || !email) {
+//     console.log("thông tin không đủ !");
+//     return null;
+//   }
+//   const userCheck = data.find((user) => {
+//     return user["email"] === email;
+//   });
+//   if (!userCheck) {
+//     var user = new User(name, password, email);
+//     user.role = "user";
+//     data.push(user);
+//     console.log("đăng kí thành công");
+//     return user;
+//   }
+//   console.log("vui lòng nhập lại email trùng!");
+//   return null;
+// }
+
+// // Hàm login
+// function handleLogin(email, password) {
+//   for (var element of data) {
+//     if (element["email"] === email && element["password"] === password)
+//       return element;
+//   }
+
+//   return "thông tin đăng nhập không hợp lệ";
+// }
+// console.log(data);
+// console.log(handleLogin("nguyenvana@email.com", "123456"));
+//================================================================
+function handleRegister(name, email, password) {
+  if (!name || !password || !email) {
+    console.log("Not Enough Information");
+    return null;
   }
-  return pushUser;
-}
-
-const addUser = handleRegister();
-console.log(addUser("Nguyen Van A", "123456", "nguyenvana@email.com"));
-console.log(addUser("Nguyen Van B", "123456", "nguyenvanb@email.com"));
-// console.log(addUser("Nguyen Van B", "123456", "nguyenvanb@email.com"));
-function handleLogin(email, password) {
-  var dataLogin = addUser().filter(function (user) {
-    return user.email === email && user.password === password;
+  const userCheck = data.find(function (user) {
+    return user["email"] === email;
   });
-  if (dataLogin.length === 0) return "Thông tin đăng nhập không hợp lệ";
-  return dataLogin;
+  if (!userCheck) {
+    var user = new User(name, email, password);
+    user.role = "user";
+    data.push(user);
+    console.log("Complete");
+    return user;
+  }
+  console.log("vui lòng nhập lại email trùng!");
+  return null;
 }
-console.log(handleLogin("nguyenvanb@email.com", "123456"));
+function handleLogin(email, password) {
+  for (const element of data) {
+    if (element["email"] === email && element["password"] === password)
+      return element;
+  }
+  return null;
+}
+console.log(data);
+console.log(handleLogin("nguyenvana@email.com", "123456"));
