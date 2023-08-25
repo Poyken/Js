@@ -33,7 +33,10 @@ function createCustomers(customerList) {
       customer.age,
       `${customer.address}`
     );
-    user.shortName = `${firstName} ${lastName}`;
+    user.shortName = `${customer.name.slice(
+      0,
+      customer.name.indexOf(" ")
+    )} ${lastName}`;
     return user;
   });
   newArray.sort(function (a, b) {
