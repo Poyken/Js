@@ -9,10 +9,13 @@
   background-color: #fff;
   left: 0;
   right: 0;
-  top: 30px;
+  top: 100px;
   width: 300px;
   margin: 0 auto;
   z-index: 1;
+  width: 380px;
+  height: 450px;
+  padding: 0 40px 30px 40px;
 }
 .content-box {
   display: none;
@@ -24,4 +27,22 @@
   position: fixed;
   background-color: #00000053;
   inset: 0;
+}
+.result1 {
+  display: none;
+}
+.result1.show {
+  display: block;
+}
+.result2 {
+  display: none;
+}
+.result2.show {
+  display: block;
+}
+.result3 {
+  display: none;
+}
+.result3.show {
+  display: block;
 }
