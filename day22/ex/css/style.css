@@ -46,3 +46,20 @@
 .result3.show {
   display: block;
 }
+.space {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.fa-eye {
+  display: none;
+}
+.fa-eye.show {
+  display: block;
+}
+.fa-eye-slash {
+  display: none;
+}
+.fa-eye-slash.show {
+  display: block;
+}

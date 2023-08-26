@@ -4,6 +4,10 @@ var closeOverlay = document.querySelector(".overlay");
 var email = document.querySelector(".email");
 var password = document.querySelector(".password");
 var submitButton = document.querySelector(".submit");
+var eye = document.querySelector(".icon");
+var icon1 = document.querySelector(".fa-eye");
+var icon2 = document.querySelector(".fa-eye-slash");
+
 // var closeContent = function () {
 //   contentBox.classList.remove("show");
 // };
@@ -40,7 +44,12 @@ btn.addEventListener("click", function () {
 closeOverlay.addEventListener("click", function () {
   contentBox.classList.remove("show");
 });
-
+password.onkeyup = function (e) {
+  if (e.key) check();
+};
+email.onkeyup = function (e) {
+  if (e.key) check();
+};
 email.onblur = function () {
   if (email.value !== "") result1.classList.remove("show");
   // else result1.classList.remove("show");
@@ -55,3 +64,16 @@ password.onblur = function () {
 };
 submitButton.addEventListener("click", check);
 submitButton.addEventListener("click", check2);
+
+eye.addEventListener("click", function () {
+  icon1.classList.toggle("show");
+  icon2.classList.toggle("show");
+});
+var eyeTrue = function () {
+  if ((password.type = "password")) password.type = "text";
+};
+var eyeFalse = function () {
+  if ((password.type = "text")) password.type = "password";
+};
+eye.addEventListener("click", eyeTrue);
+// eye.addEventListener("click", eyeFalse);

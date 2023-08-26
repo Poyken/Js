@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -18,16 +22,24 @@
           <form action="#">
             <p class="result3">Account not existed</p>
             <label for="email">Email</label>
+
             <input type="email" id="email" placeholder="Email" class="email" />
+
             <p class="result1">vui long nhap thong tin</p>
 
             <label for="password">Mat Khau</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Mat khau"
-              class="password"
-            />
+            <div class="space">
+              <div class="icon">
+                <i class="fa-regular fa-eye show"></i>
+                <i class="fa-regular fa-eye-slash"></i>
+              </div>
+              <input
+                type="password"
+                id="password"
+                placeholder="Mat khau"
+                class="password"
+              />
+            </div>
             <p class="result2">vui long nhap thong tin</p>
 
             <p>quen mat khau</p>
