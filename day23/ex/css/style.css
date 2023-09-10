@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+@font-face {
+  font-family: fonts;
+  src: url(../fonts/pxiEyp8kv8JHgFVrJJfecg.woff2);
+}
+body {
+  font-family: fonts;
+  background-color: #8758ff;
+}
+h1 {
+  color: #fff;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.TodoWrapper {
+  display: block;
+  background-color: #1a1a40;
+  padding: 2rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  text-align: center;
+  border-radius: 5px;
+  width: 450px;
+}
+.todo-input {
+  font-family: fonts;
+  background: none;
+  border: 1px solid #8758ff;
+  color: #fff;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  width: 300px;
+}
+.todo-btn {
+  font-family: fonts;
+  border: none;
+  padding: 0.55rem;
+  background: #8758ff;
+  color: #fff;
+  cursor: pointer;
+}
+.TodoForm {
+  width: 100%;
+}

@@ -70,10 +70,9 @@ eye.addEventListener("click", function () {
   icon2.classList.toggle("show");
 });
 var eyeTrue = function () {
-  if ((password.type = "password")) password.type = "text";
+  if (password.type === "password") password.type = "text";
 };
 var eyeFalse = function () {
-  if ((password.type = "text")) password.type = "password";
+  if (password.type === "text") password.type = "password";
 };
 eye.addEventListener("click", eyeTrue);
-// eye.addEventListener("click", eyeFalse);
