@@ -1,12 +1,12 @@
 var progressBar = document.querySelector(".progress-bar");
 var progress = progressBar.querySelector(".progress");
-//co the nhu vay
 var progressSpan = progress.querySelector("span");
+//co the nhu vay
 //yeu cau chuyen doi het thanh %
 var isDrag = false;
-var initialClientX;
-var initialValue = 0;
-var value = 0;
+var initialClientX; //khoang cach giua timer va body
+var initialValue = 0; //khoang cach cua lan keo truoc tren timer
+var value = 0; //gia tri de set width cho progress
 //tinh do dai cua progress bar
 var progressBarWidth = progressBar.clientWidth;
 // console.log(progressBarWidth);//400px
@@ -26,7 +26,7 @@ progressBar.addEventListener("mousedown", function (e) {
     initialValue = value;
     initialClientX = e.clientX;
     isDrag = true;
-    handleUpdateValue(value);
+    // handleUpdateValue(value);
     // console.log(initialValue);
   }
 });
@@ -54,42 +54,42 @@ document.addEventListener("mouseup", function () {
   isDrag = false;
   initialValue = value;
 });
-//xay dung trinh phat nhac
-var audio = document.querySelector(".audio");
-// console.log(audio);
-//viet ham chuyen doi second thanh minute
-var getTime = function (seconds) {
-  //giay=> phut va giay
-  var mins = Math.floor(seconds / 60);
-  seconds -= mins * 60;
-  seconds = Math.floor(seconds);
-  return `${mins < 10 ? `0${mins}` : mins}:${
-    seconds < 10 ? `0${seconds}` : seconds
-  }`;
-};
-var playBtn = document.querySelector(".play-btn");
-var durationTime = progressBar.nextElementSibling;
-var currentTime = progressBar.previousElementSibling;
-var playBtnIcon = `<i class="fa-solid fa-play"></i>`;
-var pauseBtnIcon = `<i class="fa-solid fa-pause"></i>`;
-//lang nghe su kien load  xong nhac
-audio.addEventListener("loadeddata", function () {
-  durationTime.innerText = getTime(audio.duration);
-});
-playBtn.addEventListener("click", function () {
-  if (audio.paused) {
-    audio.play();
-    this.innerHTML = pauseBtnIcon;
-  } else {
-    audio.pause();
-    this.innerHTML = playBtnIcon;
-  }
-});
+// //xay dung trinh phat nhac
+// var audio = document.querySelector(".audio");
+// // console.log(audio);
+// //viet ham chuyen doi second thanh minute
+// var getTime = function (seconds) {
+//   //giay=> phut va giay
+//   var mins = Math.floor(seconds / 60);
+//   seconds -= mins * 60;
+//   seconds = Math.floor(seconds);
+//   return `${mins < 10 ? `0${mins}` : mins}:${
+//     seconds < 10 ? `0${seconds}` : seconds
+//   }`;
+// };
+// var playBtn = document.querySelector(".play-btn");
+// var durationTime = progressBar.nextElementSibling;
+// var currentTime = progressBar.previousElementSibling;
+// var playBtnIcon = `<i class="fa-solid fa-play"></i>`;
+// var pauseBtnIcon = `<i class="fa-solid fa-pause"></i>`;
+// //lang nghe su kien load  xong nhac
+// audio.addEventListener("loadeddata", function () {
+//   durationTime.innerText = getTime(audio.duration);
+// });
+// playBtn.addEventListener("click", function () {
+//   if (audio.paused) {
+//     audio.play();
+//     this.innerHTML = pauseBtnIcon;
+//   } else {
+//     audio.pause();
+//     this.innerHTML = playBtnIcon;
+//   }
+// });
 
-audio.addEventListener("timeupdate", function () {
-  currentTime.innerText = getTime(audio.currentTime);
-  //lay ra ti le % dua vao currentTime va durations
-  var value = (audio.currentTime / audio.duration) * 100;
-  //   console.log(value);
-  handleUpdateValue(value);
-});
+// audio.addEventListener("timeupdate", function () {
+//   currentTime.innerText = getTime(audio.currentTime);
+//   //lay ra ti le % dua vao currentTime va durations
+//   var value = (audio.currentTime / audio.duration) * 100;
+//   //   console.log(value);
+//   handleUpdateValue(value);
+// });

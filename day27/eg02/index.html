@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <input
+      class="name"
+      type="text"
+      placeholder="Vui long nhap"
+      value="van duc"
+    /> -->
+    <form
+      action="https://api-gateway.fullstack.edu.vn/action_page.php"
+      class="login"
+      method="post"
+    >
+      <div>
+        <label for="">email</label>
+        <input type="email" class="email" name="email" placeholder="Email..." />
+      </div>
+      <div>
+        <label for="">password</label>
+        <input
+          type="password"
+          class="password"
+          name="password"
+          placeholder="password..."
+        />
+      </div>
+      <div>
+        <label for="">
+          <input
+            type="checkbox"
+            class="checkbox"
+            name="Remember"
+            value="1"
+          />Remember me</label
+        >
+      </div>
+      <div>
+        chon area
+        <select name="" id="">
+          <option value="0">default</option>
+          <option value="1">area 1</option>
+          <option value="2">area 2</option>
+          <option value="3">area 3</option>
+        </select>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
