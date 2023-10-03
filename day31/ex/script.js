@@ -26,6 +26,7 @@ var load = 0,
 // click();
 
 var click = function (startTime) {
+  console.log(startTime);
   if (start > 0) {
     window.requestAnimationFrame(click);
   }

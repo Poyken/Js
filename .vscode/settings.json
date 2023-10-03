@@ -10,10 +10,13 @@
         "khoi",
         "lastname",
         "nhan",
+        "phuong",
         "prenext",
         "prevalue",
         "tham",
+        "thuc",
         "tiendien",
+        "tinh",
         "truoc"
     ]
 }
