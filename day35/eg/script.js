@@ -5,7 +5,7 @@ function getRandNum() {
   return Math.floor(Math.random() * 1000);
 }
 
-function loadImages(numImages = 10) {
+function loadImages(numImages = 2) {
   let i = 0;
 
   while (i < numImages) {
